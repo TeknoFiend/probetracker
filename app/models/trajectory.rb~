@@ -1,0 +1,22 @@
+require 'date'
+
+class Trajectory  <Struct.new( :date, :radial_distance, :eclip_lat, :eclip_long,
+                               :helio_lat, :helio_long, :helio_inertial_long )
+  def all
+    $trajectories
+  end
+end
+
+#class Trajectory < ActiveRecord::Base
+#end
+
+$trajectories = []
+
+File.open('vy1trj_ssc_1d.asc') do |file|
+  file.each_line do |line|
+    record = line.split(' ')
+    trajectory = Trajectory.new( Date.ordinal( record[0], record[1] ),
+                                 record[2], record[3], record[4], record[5], record[6] )
+    $trajectories.push( trajectory )
+  end
+end

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  datetime: 2012-02-02 00:16:43
+  radial_distance: 1.5
+  eclip_lat: 1.5
+  eclip_long: 1.5
+  helio_lat: 1.5
+  helio_long: 1.5
+  helio_inertial_long: 1.5
+
+two:
+  datetime: 2012-02-02 00:16:43
+  radial_distance: 1.5
+  eclip_lat: 1.5
+  eclip_long: 1.5
+  helio_lat: 1.5
+  helio_long: 1.5
+  helio_inertial_long: 1.5

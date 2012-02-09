@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Datetime:</b>
+  <%= @trajectory.datetime %>
+</p>
+
+<p>
+  <b>Radial distance:</b>
+  <%= @trajectory.radial_distance %>
+</p>
+
+<p>
+  <b>Eclip lat:</b>
+  <%= @trajectory.eclip_lat %>
+</p>
+
+<p>
+  <b>Eclip long:</b>
+  <%= @trajectory.eclip_long %>
+</p>
+
+<p>
+  <b>Helio lat:</b>
+  <%= @trajectory.helio_lat %>
+</p>
+
+<p>
+  <b>Helio long:</b>
+  <%= @trajectory.helio_long %>
+</p>
+
+<p>
+  <b>Helio inertial long:</b>
+  <%= @trajectory.helio_inertial_long %>
+</p>
+
+
+<%= link_to 'Edit', edit_trajectory_path(@trajectory) %> |
+<%= link_to 'Back', trajectories_path %>

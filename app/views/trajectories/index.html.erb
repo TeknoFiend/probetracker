@@ -1,0 +1,35 @@
+<h1>Listing trajectories</h1>
+
+<table>
+  <tr>
+    <th>Datetime</th>
+    <th>Radial distance</th>
+    <th>Eclip lat</th>
+    <th>Eclip long</th>
+    <th>Helio lat</th>
+    <th>Helio long</th>
+    <th>Helio inertial long</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @trajectories.each do |trajectory| %>
+  <tr>
+    <td><%= trajectory.datetime %></td>
+    <td><%= trajectory.radial_distance %></td>
+    <td><%= trajectory.eclip_lat %></td>
+    <td><%= trajectory.eclip_long %></td>
+    <td><%= trajectory.helio_lat %></td>
+    <td><%= trajectory.helio_long %></td>
+    <td><%= trajectory.helio_inertial_long %></td>
+    <td><%= link_to 'Show', trajectory %></td>
+    <td><%= link_to 'Edit', edit_trajectory_path(trajectory) %></td>
+    <td><%= link_to 'Destroy', trajectory, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Trajectory', new_trajectory_path %>

@@ -1,0 +1,45 @@
+<%= form_for(@trajectory) do |f| %>
+  <% if @trajectory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trajectory.errors.count, "error") %> prohibited this trajectory from being saved:</h2>
+
+      <ul>
+      <% @trajectory.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :datetime %><br />
+    <%= f.datetime_select :datetime %>
+  </div>
+  <div class="field">
+    <%= f.label :radial_distance %><br />
+    <%= f.text_field :radial_distance %>
+  </div>
+  <div class="field">
+    <%= f.label :eclip_lat %><br />
+    <%= f.text_field :eclip_lat %>
+  </div>
+  <div class="field">
+    <%= f.label :eclip_long %><br />
+    <%= f.text_field :eclip_long %>
+  </div>
+  <div class="field">
+    <%= f.label :helio_lat %><br />
+    <%= f.text_field :helio_lat %>
+  </div>
+  <div class="field">
+    <%= f.label :helio_long %><br />
+    <%= f.text_field :helio_long %>
+  </div>
+  <div class="field">
+    <%= f.label :helio_inertial_long %><br />
+    <%= f.text_field :helio_inertial_long %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
