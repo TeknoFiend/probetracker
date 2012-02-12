@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  aphelion: MyString
+  perihelion: MyString
+  semimajor_axis: MyString
+  orbital_period: 1.5
+  polar_radius: 
+
+two:
+  name: MyString
+  aphelion: MyString
+  perihelion: MyString
+  semimajor_axis: MyString
+  orbital_period: 1.5
+  polar_radius: 

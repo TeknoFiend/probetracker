@@ -1,4 +1,6 @@
 Solarsystem::Application.routes.draw do
+  resources :planets
+
   resources :trajectories
 
   # The priority is based upon order of creation:

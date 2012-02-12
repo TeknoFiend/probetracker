@@ -7,79 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="space">
-
-  <div class="date_label">1977</div>
-
-  <div class="sun in-space"></div>
-  <div class="earth in-space"></div>
-  <div class="mars in-space"></div>
-
-  <div class="control-bar">
-    <div class="year-slider"></div>
-  </div>
 
 <%= yield %>
 
-
-<script>
-(function ($) {
-// VERTICALLY ALIGN FUNCTION
-$.fn.vAlign = function() {
-	return this.each(function(i){
-	var ah = $(this).height();
-	var ph = $(".control-bar").offset().top;
-	var mh = Math.ceil((ph-ah) / 2);
-	$(this).css('top', mh);
-	});
-};
-})(jQuery);
-
-(function ($) {
-// HORIZONTALLY ALIGN FUNCTION
-$.fn.hAlign = function() {
-	return this.each(function(i){
-	var ah = $(this).width();
-	var ph = $(this).parent().width();
-	var mh = Math.ceil((ph-ah) / 2);
-	$(this).css('left', mh);
-	});
-};
-})(jQuery);
-
-$(function() {
-  var years = 2012-1977;
-  var days_per_year = 365.2563
-  var days = years * days_per_year;
-
-  $(".control-bar .year-slider").slider({
-    min: 1,
-    max: days,
-    slide: function(event, ui) {
-      move_planet( $('.sun'), $('.earth'), years*ui.value/days, 100 );
-      move_planet( $('.sun'), $('.mars'), years*ui.value/days/1.88, 200 );
-      $('.date_label').html( Math.floor(ui.value/days_per_year + 1977) );
-    }
-  });
-
-  $('.sun').vAlign();
-  $('.sun').hAlign();
-
-  move_planet( $('.sun'), $('.earth'), 0, 100 );
-  move_planet( $('.sun'), $('.mars'), 0, 200 );
-
-  Planet = Backbone.Model.extend({
-    defaults: function() {
-      return {
-        diameter: 30,
-        position: {}
-      };
-    },
-  });
-
-});
-</script>
-
-</div>
 </body>
 </html>

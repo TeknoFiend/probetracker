@@ -1,1 +1,74 @@
+<div class="space">
+  <div class="date_label"></div>
 
+  <div class="sun in-space"></div>
+
+  <div class="control_bar">
+    <button data-control-type="play">Play</button>
+    <div class="year_slider"></div>
+  </div>
+</div>
+
+<script>
+(function ($) {
+// VERTICALLY ALIGN FUNCTION
+$.fn.vAlign = function() {
+	return this.each(function(i){
+	var ah = $(this).height();
+	var ph = $(".control_bar").offset().top;
+	var mh = Math.ceil((ph-ah) / 2);
+	$(this).css('top', mh);
+	});
+};
+})(jQuery);
+
+(function ($) {
+// HORIZONTALLY ALIGN FUNCTION
+$.fn.hAlign = function() {
+	return this.each(function(i){
+	var ah = $(this).width();
+	var ph = $(this).parent().width();
+	var mh = Math.ceil((ph-ah) / 2);
+	$(this).css('left', mh);
+	});
+};
+})(jQuery);
+
+
+function setUniverseToDate( year, day )
+{
+   $('.date_label').html( year );
+   SolarSystem.move_planets( year, day );
+}
+
+
+function setUniverseToDay( the_day )
+{
+   year = Math.floor( the_day / SolarSystem.days_per_year ) + SolarSystem.initial_date.year
+   day = (the_day % SolarSystem.days_per_year) + SolarSystem.initial_date.day
+   setUniverseToDate( year, day );
+}
+
+
+$(function() {
+  $('.sun').vAlign();
+  $('.sun').hAlign();
+
+  var slider = $(".control_bar .year_slider").slider({
+    min: 1,
+    max: Math.floor( SolarSystem.total_days() ),
+    slide: function(event, ui) {
+       setUniverseToDay( ui.value );
+    }
+  });
+
+  $('button[data-control-type="play"]').button().click( function() {
+    setInterval( function() {
+      slider.slider('value', slider.slider('value') + 3 );
+      setUniverseToDay( slider.slider('value') );
+    }, 50);
+  });
+
+  setUniverseToDate( SolarSystem.initial_date.year, SolarSystem.initial_date.day );
+});
+</script>

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @planet.name %>
+</p>
+
+<p>
+  <b>Aphelion:</b>
+  <%= @planet.aphelion %>
+</p>
+
+<p>
+  <b>Perihelion:</b>
+  <%= @planet.perihelion %>
+</p>
+
+<p>
+  <b>Semimajor axis:</b>
+  <%= @planet.semimajor_axis %>
+</p>
+
+<p>
+  <b>Orbital period:</b>
+  <%= @planet.orbital_period %>
+</p>
+
+<p>
+  <b>Polar radius:</b>
+  <%= @planet.polar_radius %>
+</p>
+
+
+<%= link_to 'Edit', edit_planet_path(@planet) %> |
+<%= link_to 'Back', planets_path %>

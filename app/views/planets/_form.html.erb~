@@ -1,0 +1,47 @@
+<div class="scaffold">
+<%= form_for(@planet) do |f| %>
+  <% if @planet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@planet.errors.count, "error") %> prohibited this planet from being saved:</h2>
+
+      <ul>
+      <% @planet.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :color %><br />
+    <%= f.text_field :color %>
+  </div>
+  <div class="field">
+    <%= f.label :aphelion %><br />
+    <%= f.text_field :aphelion %>
+  </div>
+  <div class="field">
+    <%= f.label :perihelion %><br />
+    <%= f.text_field :perihelion %>
+  </div>
+  <div class="field">
+    <%= f.label :semimajor_axis %><br />
+    <%= f.text_field :semimajor_axis %>
+  </div>
+  <div class="field">
+    <%= f.label :orbital_period %><br />
+    <%= f.text_field :orbital_period %>
+  </div>
+  <div class="field">
+    <%= f.label :polar_radius %><br />
+    <%= f.text_field :polar_radius %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</div>

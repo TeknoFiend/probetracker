@@ -1,0 +1,33 @@
+<h1>Listing planets</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Aphelion</th>
+    <th>Perihelion</th>
+    <th>Semimajor axis</th>
+    <th>Orbital period</th>
+    <th>Polar radius</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @planets.each do |planet| %>
+  <tr>
+    <td><%= planet.name %></td>
+    <td><%= planet.aphelion %></td>
+    <td><%= planet.perihelion %></td>
+    <td><%= planet.semimajor_axis %></td>
+    <td><%= planet.orbital_period %></td>
+    <td><%= planet.polar_radius %></td>
+    <td><%= link_to 'Show', planet %></td>
+    <td><%= link_to 'Edit', edit_planet_path(planet) %></td>
+    <td><%= link_to 'Destroy', planet, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Planet', new_planet_path %>

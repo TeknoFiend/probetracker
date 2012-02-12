@@ -23,6 +23,19 @@ a {
     color: #fff;
     background-color: #000; } }
 
+div.scaffold {
+   margin:20px;
+}
+ 
+div.scaffold table {
+   margin:15px;
+}
+
+div.scaffold table td, div.scaffold table th {
+   padding:5px;
+   border:1px solid #c7c7c7;
+}
+
 div {
   &.field, &.actions {
     margin-bottom: 10px; } }
