@@ -11,7 +11,7 @@ body {
 }
 
 .space {
-     height:100%;
+     min-height:100%;
      background: #222222;
      background: -moz-linear-gradient(top, #151515 0%, #050505 99%);
      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#151515), color-stop(99%,#050505));
@@ -82,18 +82,4 @@ body {
      height:16px;
      border-radius:8px;
      background-color:orange;
-}
-
-.earth {
-       width:8px;
-       height:8px;
-       border-radius:4px;
-       background-color:blue;
-}
-
-.mars {
-       width:8px;
-       height:8px;
-       border-radius:4px;
-       background-color:red;
 }
