@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
-gem 'rake', "!= 0.9.0", "!= 0.9.1", "!= 0.9.2", "!= 0.9.2.2" # Rake 0.9.0-0.9.2.2 break Rails (http://stackoverflow.com/questions/6085610/ruby-on-rails-and-rake-problems-uninitialized-constant-rakedsl)
+gem 'rake'  #, "!= 0.9.0", "!= 0.9.1", "!= 0.9.2", "!= 0.9.2.2" # Rake 0.9.0-0.9.2.2 break Rails (http://stackoverflow.com/questions/6085610/ruby-on-rails-and-rake-problems-uninitialized-constant-rakedsl)
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
