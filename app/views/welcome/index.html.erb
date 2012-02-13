@@ -4,37 +4,12 @@
   <div class="sun in-space"></div>
 
   <div class="control_bar">
-    <button data-control-type="play">Play</button>
+    <button data-control-type="play" data-toggled-text="Stop" autocomplete="off">Play</button>
     <div class="year_slider"></div>
   </div>
 </div>
 
 <script>
-(function ($) {
-// VERTICALLY ALIGN FUNCTION
-$.fn.vAlign = function() {
-	return this.each(function(i){
-	var ah = $(this).height();
-	var ph = $(".control_bar").offset().top;
-	var mh = Math.ceil((ph-ah) / 2);
-	$(this).css('top', mh);
-	});
-};
-})(jQuery);
-
-(function ($) {
-// HORIZONTALLY ALIGN FUNCTION
-$.fn.hAlign = function() {
-	return this.each(function(i){
-	var ah = $(this).width();
-	var ph = $(this).parent().width();
-	var mh = Math.ceil((ph-ah) / 2);
-	$(this).css('left', mh);
-	});
-};
-})(jQuery);
-
-
 function setUniverseToDate( year, day )
 {
    $('.date_label').html( year );
@@ -51,8 +26,6 @@ function setUniverseToDay( the_day )
 
 
 $(function() {
-  $('.sun').vAlign();
-  $('.sun').hAlign();
 
   var slider = $(".control_bar .year_slider").slider({
     min: 1,
@@ -62,13 +35,25 @@ $(function() {
     }
   });
 
-  $('button[data-control-type="play"]').button().click( function() {
-    setInterval( function() {
-      slider.slider('value', slider.slider('value') + 3 );
-      setUniverseToDay( slider.slider('value') );
-    }, 50);
+  var animation_id = null;
+  $('button[data-control-type="play"]').click( function() {
+    if( $(this).html() != $(this).attr('data-toggled-text') ) {
+       animation_id = setInterval( function() {
+          slider.slider('value', slider.slider('value') + 10 );
+          setUniverseToDay( slider.slider('value') );
+       }, 100);
+
+       $(this).attr('data-normal-text', $(this).html() );
+       $(this).html( $(this).attr('data-toggled-text') );
+    }
+    else {
+       clearInterval( animation_id );
+       animation_id = null;
+       $(this).html( $(this).attr('data-normal-text') );
+    }
   });
 
+  StartUniverse();
   setUniverseToDate( SolarSystem.initial_date.year, SolarSystem.initial_date.day );
 });
 </script>

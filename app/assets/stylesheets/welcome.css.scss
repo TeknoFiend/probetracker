@@ -8,6 +8,7 @@ html {
 
 body {
      height:100%;
+     overflow:hidden;
 }
 
 .space {
@@ -21,6 +22,7 @@ body {
      background: linear-gradient(top, #151515 0%,#050505 99%);
      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#151515', endColorstr='#050505',GradientType=0 );
      background-attachment:fixed;
+     overflow:hidden;
 }
 
 .control_bar {
@@ -78,8 +80,54 @@ body {
 
 
 .sun {
-     width:16px;
-     height:16px;
-     border-radius:8px;
-     background-color:orange;
+     width:9px;
+     height:9px;
+     border:1px solid orange;
+     border-radius:5px;
+}
+
+.orbit_path {
+   border:1px solid #191919;
+}
+
+.mercury_orbit {
+   width:27px;
+   height:27px;
+   border:1px solid #191919;
+   border-radius:14px;
+}
+
+.venus_orbit {
+   width:54px;
+   height:54px;
+   border:1px solid #191919;
+   border-radius:27px;
+}
+
+.earth_orbit {
+   width:73px;
+   height:73px;
+   border:1px solid #191919;
+   border-radius:37px;
+}
+
+.mars_orbit {
+   width:112px;
+   height:112px;
+   border:1px solid #191919;
+   border-radius:56px;
+}
+
+.jupiter_orbit {
+   width:390px;
+   height:390px;
+   border:1px solid #191919;
+   border-radius:200px;
+}
+
+.saturn_orbit {
+   width:714px;
+   height:714px;
+   border:1px solid #191919;
+   border-radius:357px;
 }
