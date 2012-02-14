@@ -1,19 +1,18 @@
+<div class="date_label"></div>
+
 <div class="space">
-  <div class="date_label"></div>
+</div>
 
-  <div class="sun in-space"></div>
-
-  <div class="control_bar">
-    <button data-control-type="play" data-toggled-text="Stop" autocomplete="off">Play</button>
-    <div class="year_slider"></div>
-  </div>
+<div class="control_bar">
+  <button data-control-type="play" data-toggled-text="Stop" autocomplete="off">Play</button>
+  <div class="year_slider"></div>
 </div>
 
 <script>
 function setUniverseToDate( year, day )
 {
    $('.date_label').html( year );
-   SolarSystem.move_planets( year, day );
+   move_planets( year, day );
 }
 
 

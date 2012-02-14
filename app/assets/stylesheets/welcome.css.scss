@@ -80,8 +80,6 @@ body {
 
 
 .sun {
-     width:9px;
-     height:9px;
      border:1px solid orange;
      border-radius:5px;
 }
@@ -130,4 +128,10 @@ body {
    height:714px;
    border:1px solid #191919;
    border-radius:357px;
+}
+
+.space .star {
+   position:absolute;
+   width:1px;
+   height:1px;
 }
