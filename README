@@ -1,5 +1,9 @@
 == Probe Tracker
 
+
+Overview
+--------
+
 The idea behind this project is to provide a simple way to visualize where all the current NASA space probes are and be able to see each of their trajectories through time.
 
 So far all I've built is an inaccurate model of the orbits of the planets. The data for the orbits is accurate but the animations assume circuluar orbits, don't have correct starting points, and don't account for inter-body perturbations.
@@ -11,3 +15,9 @@ I was assuming that I would be able to model the larger perturbations and change
 If anyone has experience in orbital/celestial mechanics I would love some help!
 
 
+About the Project
+-----------------
+
+This is a Rails 3 app, but most of the interesting stuff is happening in JavaScript right now. There's really no reason for "Planet" to be Model right now but it allowed me to play with Backbone.js and use it's cool fetch feature.
+
+Right now all of the visual elements (Sun, planets, orbits, stars) are created using DIVs with rounded borders. This isn't ideal but it was the simplest way for me to get something working and start playing with the models. When I have time I'd like to look into the HTML5 canvas element which I've never had the chance to use.
