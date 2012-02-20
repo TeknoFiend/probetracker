@@ -4,7 +4,7 @@
 </div>
 
 <div class="control_bar">
-  <button data-control-type="play" data-toggled-text="Stop" autocomplete="off">Play</button>
+  <a class="btn btn-primary" data-control-type="play" data-toggled-text=" Stop" data-toggled-icon="icon-stop" data-normal-icon="icon-play" data-normal-text=" Play" autocomplete="off"><i class="icon-play icon-white"></i> Play</a>
   <div class="year_slider"></div>
 </div>
 
@@ -35,20 +35,21 @@ $(function() {
   });
 
   var animation_id = null;
-  $('button[data-control-type="play"]').click( function() {
-    if( $(this).html() != $(this).attr('data-toggled-text') ) {
+  $('a[data-control-type="play"]').button().click( function() {
+    if( ! $(this).attr('data-is-toggled') ) {
        animation_id = setInterval( function() {
           slider.slider('value', slider.slider('value') + 10 );
           setUniverseToDay( slider.slider('value') );
        }, 100);
 
-       $(this).attr('data-normal-text', $(this).html() );
-       $(this).html( $(this).attr('data-toggled-text') );
+       $(this).html( '<i class="icon-stop icon-white"></i>' + $(this).attr('data-toggled-text') );
+       $(this).attr('data-is-toggled', true);
     }
     else {
        clearInterval( animation_id );
        animation_id = null;
-       $(this).html( $(this).attr('data-normal-text') );
+       $(this).html( '<i class="icon-play icon-white"></i>' + $(this).attr('data-normal-text') );
+       $(this).attr('data-is-toggled', false);
     }
   });
 
