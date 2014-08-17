@@ -13,3 +13,6 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+app/models/wp-config.php
+app/models/wp-config.php.old
